@@ -15,9 +15,11 @@ interface Project {
 
 function App() {
   const [currentProject, setCurrentProject] = useState(0);
-  const [activeTab, setActiveTab] = useState<"web" | "simulation">("web");
+  const [activeTab, setActiveTab] = useState<"personal" | "professional">(
+    "personal"
+  );
 
-  const webProjects: Project[] = [
+  const personalProjects: Project[] = [
     {
       id: 1,
       title: "Double Bill",
@@ -50,20 +52,20 @@ function App() {
     },
   ];
 
-  const simulationProjects: Project[] = [
+  const professionalProjects: Project[] = [
     {
       id: 5,
-      title: "Fleet Support",
-      video: "/assets/Videos/FleetSupport.mp4",
-      thumbnail: "/assets/Thumbnails/FleetSupport.png",
-      description: "Discrete Event Simulation Project.",
-    },
-    {
-      id: 6,
       title: "Crew Movement",
       video: "/assets/Videos/CrewMovement.mp4",
       thumbnail: "/assets/Thumbnails/CrewMovement.png",
       description: "Discrete Event Simulation Project.",
+    },
+    {
+      id: 6,
+      title: "Vessel Design Training",
+      video: "/assets/Videos/VesselDesign.mp4",
+      thumbnail: "/assets/Thumbnails/VesselDesign.png",
+      description: "Vessel Design Application used for training exercises.",
     },
     {
       id: 7,
@@ -72,10 +74,17 @@ function App() {
       thumbnail: "/assets/Thumbnails/ComponentAssembly.png",
       description: "Discrete Event Simulation Project.",
     },
+    {
+      id: 8,
+      title: "Fleet Support",
+      video: "/assets/Videos/FleetSupport.mp4",
+      thumbnail: "/assets/Thumbnails/FleetSupport.png",
+      description: "Discrete Event Simulation Project.",
+    },
   ];
 
   const currentProjects =
-    activeTab === "web" ? webProjects : simulationProjects;
+    activeTab === "personal" ? personalProjects : professionalProjects;
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % currentProjects.length);
@@ -91,7 +100,7 @@ function App() {
     setCurrentProject(index);
   };
 
-  const handleTabChange = (tab: "web" | "simulation") => {
+  const handleTabChange = (tab: "personal" | "professional") => {
     setActiveTab(tab);
     setCurrentProject(0); // Reset to first project when switching tabs
   };
@@ -131,17 +140,45 @@ function App() {
 
       <div className="tabs">
         <button
-          className={`tab-btn ${activeTab === "web" ? "active" : ""}`}
-          onClick={() => handleTabChange("web")}
+          className={`tab-btn ${activeTab === "personal" ? "active" : ""}`}
+          onClick={() => handleTabChange("personal")}
         >
-          Web/Mobile Apps
+          Personal Projects
         </button>
         <button
-          className={`tab-btn ${activeTab === "simulation" ? "active" : ""}`}
-          onClick={() => handleTabChange("simulation")}
+          className={`tab-btn ${activeTab === "professional" ? "active" : ""}`}
+          onClick={() => handleTabChange("professional")}
         >
-          Simulation Projects
+          Professional Experience
         </button>
+      </div>
+
+      <div className="tab-content-info">
+        {activeTab === "personal" ? (
+          <div className="tab-description">
+            <p>
+              Cross-platform applications designed to run seamlessly on web and
+              mobile devices. These projects showcase full-stack development
+              skills with responsive design and multi-platform compatibility.
+            </p>
+          </div>
+        ) : (
+          <div className="tab-description">
+            <p>
+              Professional work completed at{" "}
+              <a
+                href="https://www.bmt.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="company-link"
+              >
+                BMT
+              </a>
+              , specializing in discrete event simulation and complex system
+              modeling for maritime and defense applications.
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="carousel-container">
@@ -172,7 +209,7 @@ function App() {
             )}
             <div className="project-content">
               <p>{currentProjects[currentProject].description}</p>
-              {activeTab === "web" && (
+              {activeTab === "personal" && (
                 <div className="platform-buttons">
                   {currentProjects[currentProject].webUrl && (
                     <a
