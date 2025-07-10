@@ -16,25 +16,25 @@ function App() {
     {
       id: 1,
       title: "Double Bill",
-      image: "./src/assets/DoubleBill.png",
+      image: "./assets/DoubleBill.png",
       description: "Movie Comparison App.",
     },
     {
       id: 2,
       title: "Indigo Football",
-      image: "./src/assets/IndigoFootball.png",
+      image: "./assets/IndigoFootball.png",
       description: "Roster Allocation App.",
     },
     {
       id: 3,
       title: "Collection Paradise",
-      image: "./src/assets/CollectionParadise.png",
+      image: "./assets/CollectionParadise.png",
       description: "Library App.",
     },
     {
       id: 4,
       title: "Eventron",
-      image: "./src/assets/Eventron.png",
+      image: "./assets/Eventron.png",
       description: "Discrete Event Simulation App.",
     },
   ];
@@ -43,19 +43,19 @@ function App() {
     {
       id: 5,
       title: "Fleet Support",
-      image: "./src/assets/FleetSupport.png",
+      image: "./assets/FleetSupport.png",
       description: "Discrete Event Simulation Project.",
     },
     {
       id: 6,
       title: "Crew Movement",
-      image: "./src/assets/CrewMovement.png",
+      image: "./assets/CrewMovement.png",
       description: "Discrete Event Simulation Project.",
     },
     {
       id: 7,
       title: "Assembly Simulation",
-      image: "./src/assets/ComponentAssembly.png",
+      image: "./assets/ComponentAssembly.png",
       description: "Discrete Event Simulation Project.",
     },
   ];
