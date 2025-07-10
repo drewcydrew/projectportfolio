@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: #0a0a0a;
+  min-height: 100vh;
 }
 
 .portfolio {
@@ -18,13 +20,13 @@
 
 .portfolio-header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #4a90e2;
   margin-bottom: 0.5rem;
 }
 
 .portfolio-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: #4a90e2;
   margin: 0;
 }
 
@@ -44,9 +46,9 @@
 }
 
 .carousel-btn {
-  background: #4a90e2;
-  color: white;
-  border: none;
+  background: transparent;
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -59,7 +61,7 @@
 }
 
 .carousel-btn:hover {
-  background: #357abd;
+  background: rgba(74, 144, 226, 0.1);
   transform: scale(1.1);
 }
 
@@ -68,40 +70,49 @@
 }
 
 .project-card {
-  background: white;
+  background: transparent;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4a90e2;
   overflow: hidden;
   transition: transform 0.3s ease;
-  flex: 1;
+  width: 600px;
   max-width: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(74, 144, 226, 0.3);
 }
 
 .project-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .project-content {
   padding: 2rem;
   text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
 }
 
 .project-content h2 {
   font-size: 1.8rem;
-  color: #333;
+  color: #4a90e2;
   margin-bottom: 1rem;
 }
 
 .project-content p {
   font-size: 1rem;
-  color: #666;
+  color: #4a90e2;
   line-height: 1.6;
   margin: 0;
 }
@@ -115,8 +126,8 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: none;
-  background: #ddd;
+  border: 2px solid #4a90e2;
+  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -127,12 +138,12 @@
 }
 
 .indicator:hover {
-  background: #357abd;
+  background: rgba(74, 144, 226, 0.5);
 }
 
 .project-counter {
   font-size: 1.1rem;
-  color: #666;
+  color: #4a90e2;
   font-weight: 500;
 }
 
@@ -146,7 +157,7 @@
 .tab-btn {
   padding: 0.8rem 1.5rem;
   border: 2px solid #4a90e2;
-  background: white;
+  background: transparent;
   color: #4a90e2;
   border-radius: 8px;
   cursor: pointer;
@@ -156,12 +167,12 @@
 }
 
 .tab-btn:hover {
-  background: #f0f7ff;
+  background: rgba(74, 144, 226, 0.1);
 }
 
 .tab-btn.active {
-  background: #4a90e2;
-  color: white;
+  background: rgba(74, 144, 226, 0.2);
+  color: #4a90e2;
 }
 
 .contact-info {
@@ -171,9 +182,9 @@
   justify-content: center;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: transparent;
   border-radius: 12px;
-  border: 1px solid #e9ecef;
+  border: 2px solid #4a90e2;
 }
 
 .contact-item {
@@ -185,7 +196,7 @@
 
 .contact-label {
   font-weight: 600;
-  color: #333;
+  color: #4a90e2;
   font-size: 0.9rem;
 }
 
@@ -197,7 +208,7 @@
 }
 
 .contact-link:hover {
-  color: #357abd;
+  color: #6ba3f0;
   text-decoration: underline;
 }
 
@@ -217,16 +228,22 @@
     font-size: 1.2rem;
   }
 
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
   .project-content {
     padding: 1.5rem;
   }
 
   .project-content h2 {
     font-size: 1.5rem;
-  }
-
-  .project-image {
-    height: 200px;
   }
   
   .contact-info {
@@ -256,5 +273,15 @@
 
   .project-content p {
     font-size: 0.9rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+    height: 350px;
+  }
+
+  .project-image {
+    height: 180px;
   }
 }
