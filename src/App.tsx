@@ -66,7 +66,7 @@ function App() {
       video: "/assets/Videos/CrewMovementNew.mp4",
       thumbnail: "/assets/Thumbnails/CrewMovement.png",
       description:
-        "Discrete Event Simulation Project deeveloped for BMT using Flexsim, for analyzing ship design layout. " +
+        "Discrete Event Simulation Project developed for BMT using Flexsim, for analyzing ship design layout. " +
         "Crew members are represented as A* travellers navigating the proposed vessel layout in order to execute tasks, " +
         "Process duration and resouce utilization is then driven by parameters like crew availablility and operating doctrine.",
     },
