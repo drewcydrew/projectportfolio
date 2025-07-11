@@ -25,8 +25,8 @@ function App() {
       title: "Double Bill",
       image: "/assets/DoubleBill.png",
       description:
-        "Movie Comparison Application, take a pair of film/tv properties and uses TMDB to provide a list of actor/crew credits who worked on both. " +
-        "Alternatively it can provide a list of films/tv properties that the actors/crew have worked on together.",
+        "Movie Comparison Application, takes a pair of film/tv properties and uses TMDB to provide a list of actor/crew credits who worked on both. " +
+        "Alternatively, enter two individuals to see a list of film/tv properties they've collaborated on.",
 
       webUrl: "https://iamdb.info/",
     },
@@ -35,7 +35,7 @@ function App() {
       title: "Indigo Football",
       image: "/assets/IndigoFootball.png",
       description:
-        "Roster Allocation Application, create balanced teams for matchday based on player ability and team generation algorithm.",
+        "Team Generation Application, create balanced teams for matchday based on player ability and selected team generation algorithm.",
       webUrl: "https://indigofootball.org/",
       iosUrl: "https://apps.apple.com/us/app/indigo-football/id6740720730",
     },
@@ -44,8 +44,8 @@ function App() {
       title: "Collection Paradise",
       image: "/assets/CollectionParadise.png",
       description:
-        "Library Inventory Visualisation App. Visualises database contents and provides query options for generating book lists. " +
-        "Provides funcitlaity for scraping public data and generating collection cover images.",
+        "Inventory Visualisation Application. Visualises database contents and provides query options for creating sublists. " +
+        "Provides funcitlaity for scraping adidtional public data for sublists, and generating and exporting graph data.",
       webUrl: "https://collectionparadise.com.au/",
     },
     {
@@ -53,7 +53,8 @@ function App() {
       title: "Eventron",
       image: "/assets/Eventron.png",
       description:
-        "Discrete Event Simulation App. Represents individual travellers as A* travellers, they collect a box and travel to allocation",
+        "Discrete Event Simulation Application. Represents individuals as A* traveller agents executing task list in 2D space. " +
+        " implements agent based decision logic and graphic representation of current simulation state along with events over time.",
       webUrl: "https://eventron-umal.onrender.com/",
     },
   ];
@@ -67,7 +68,7 @@ function App() {
       description:
         "Discrete Event Simulation Project deeveloped for BMT using Flexsim, for analyzing ship design layout. " +
         "Crew members are represented as A* travellers navigating the proposed vessel layout in order to execute tasks, " +
-        "Process duration is tehn linked to parameters like crew numbers and operating principles.",
+        "Process duration and resouce utilization is then driven by parameters like crew availablility and operating doctrine.",
     },
     {
       id: 6,
@@ -86,9 +87,9 @@ function App() {
       video: "/assets/Videos/FleetSupportNew.mp4",
       thumbnail: "/assets/Thumbnails/FleetSupport.png",
       description:
-        "Discrete Event Simulation Project deeveloped for BMT using Flexsim, for analyzing proposed maintenance locations and processes. " +
-        "Vessels represented in terms of scheduled and random maintenance requirements, addressed at proposed maintannce loaitons on shore, " +
-        "operational performance linked to time on station, as by maiteannce methodology and facilities.",
+        "Discrete Event Simulation Project developed for BMT using Flexsim, for analyzing proposed maintenance locations and processes. " +
+        "Vessels represented in terms of scheduled and random maintenance requirements, addressed at proposed maintenance locations on shore. " +
+        "Fleet performance is thereby driven by maintenance facility locations, resource allocation, and equipment parameters.",
     },
     {
       id: 8,
@@ -97,9 +98,9 @@ function App() {
       thumbnail: "/assets/Thumbnails/ComponentAssembly.png",
 
       description:
-        "Discrete Event Simulation Project deeveloped for BMT using Flexsim, for analyzing proposed facility layout for offshore consturction porject. " +
-        "wind turbines constructed form several componetns, stored in stockpiles on consturction area and assembled by A* travllers, vessel colleciotn of constructed turbine sections on JIT basis, " +
-        "Construction rate linked to facility layout, construction and transport facilities.",
+        "Discrete Event Simulation Project developed for BMT using Flexsim, for analyzing proposed facility layout for offshore construction project. " +
+        "Wind turbines constructed from several comopnents, stored in stockpiles on construction area and assembled by A* travellers, vessel collection of constructed turbine sections on JIT basis. " +
+        "Turbine production rate linked to facility layout, construction and transport facilities.",
     },
   ];
 
@@ -195,10 +196,11 @@ function App() {
                   className="company-link"
                 >
                   BMT
-                </a>
+                </a>{" "}
                 mostly consisted of the development of discrete event
-                simulations and data dashboards for the purposes of providing
-                logistics advice. References avialable upon request.
+                simulations for the purposes of providing logistics advice,
+                along with development of data dashboards and bespoke software
+                applications. References available upon request.
               </p>
             </div>
           )}

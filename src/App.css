@@ -122,8 +122,9 @@ body {
 .project-image {
   width: 100%;
   height: clamp(180px, 40vh, 350px);
-  object-fit: cover;
+  object-fit: contain;
   flex-shrink: 0;
+  background: #000;
 }
 
 .project-video {
