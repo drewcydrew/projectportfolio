@@ -132,31 +132,31 @@ function App() {
         <p>
           Developing Cross Platform Applications and Discrete Event Simulations
         </p>
+
+        <div className="contact-info">
+          <div className="contact-item">
+            <span className="contact-label">Email:</span>
+            <a
+              href="mailto:your.andrewjovaras@gmail.com"
+              className="contact-link"
+            >
+              andrewjovaras@gmail.com
+            </a>
+          </div>
+
+          <div className="contact-item">
+            <span className="contact-label">GitHub:</span>
+            <a
+              href="https://github.com/drewcydrew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              github.com/drewcydrew
+            </a>
+          </div>
+        </div>
       </header>
-
-      <div className="contact-info">
-        <div className="contact-item">
-          <span className="contact-label">Email:</span>
-          <a
-            href="mailto:your.andrewjovaras@gmail.com"
-            className="contact-link"
-          >
-            andrewjovaras@gmail.com
-          </a>
-        </div>
-
-        <div className="contact-item">
-          <span className="contact-label">GitHub:</span>
-          <a
-            href="https://github.com/drewcydrew"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-          >
-            github.com/drewcydrew
-          </a>
-        </div>
-      </div>
 
       <div className="tabs">
         <button
@@ -173,144 +173,148 @@ function App() {
         </button>
       </div>
 
-      <div className="tab-content-info">
-        {activeTab === "personal" ? (
-          <div className="tab-description">
-            <p>
-              Cross-platform applications designed to run seamlessly on web and
-              mobile devices. These projects showcase full-stack development
-              skills with responsive design and multi-platform compatibility.
-            </p>
-          </div>
-        ) : (
-          <div className="tab-description">
-            <p>
-              Previous work at{" "}
-              <a
-                href="https://www.bmt.org/services/asset-monitoring-sustainment/discrete-event-simulation-for-engineering-systems/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="company-link"
-              >
-                BMT
-              </a>
-              mostly consisted of the development of discrete event simulations
-              and data dashboards for the purposes of providing logistics
-              advice. References avialable upon request.
-            </p>
-          </div>
-        )}
-      </div>
-
-      <div className="carousel-container">
-        <div className="carousel">
-          <button className="carousel-btn prev" onClick={prevProject}>
-            &#8249;
-          </button>
-
-          <div className="project-card">
-            <div className="project-header">
-              <h2>{currentProjects[currentProject].title}</h2>
+      <div className="tab-book-container">
+        <div className="tab-content-info">
+          {activeTab === "personal" ? (
+            <div className="tab-description">
+              <p>
+                Cross-platform applications designed to run seamlessly on web
+                and mobile devices. These projects showcase full-stack
+                development skills with responsive design and multi-platform
+                compatibility.
+              </p>
             </div>
-            {currentProjects[currentProject].video ? (
-              <video
-                src={currentProjects[currentProject].video}
-                className="project-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-                controlsList="nodownload"
-              />
-            ) : (
-              <img
-                src={currentProjects[currentProject].image}
-                alt={currentProjects[currentProject].title}
-                className="project-image"
-              />
-            )}
-            <div className="project-content">
-              <p>{currentProjects[currentProject].description}</p>
-              {activeTab === "personal" && (
-                <div className="platform-buttons">
-                  {currentProjects[currentProject].webUrl && (
-                    <a
-                      href={currentProjects[currentProject].webUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="platform-btn web-btn"
-                    >
-                      <span className="btn-icon">🌐</span>
-                      Open Web App
-                    </a>
-                  )}
-                  {currentProjects[currentProject].androidUrl && (
-                    <a
-                      href={currentProjects[currentProject].androidUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="platform-btn android-btn"
-                    >
-                      <span className="btn-icon">⚡</span>
-                      Android
-                    </a>
-                  )}
-                  {currentProjects[currentProject].iosUrl && (
-                    <a
-                      href={currentProjects[currentProject].iosUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="platform-btn ios-btn"
-                    >
-                      <span className="btn-icon">🍏</span>
-                      iOS
-                    </a>
-                  )}
-                </div>
-              )}
+          ) : (
+            <div className="tab-description">
+              <p>
+                Previous work at{" "}
+                <a
+                  href="https://www.bmt.org/services/asset-monitoring-sustainment/discrete-event-simulation-for-engineering-systems/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="company-link"
+                >
+                  BMT
+                </a>
+                mostly consisted of the development of discrete event
+                simulations and data dashboards for the purposes of providing
+                logistics advice. References avialable upon request.
+              </p>
             </div>
-          </div>
-
-          <button className="carousel-btn next" onClick={nextProject}>
-            &#8250;
-          </button>
+          )}
         </div>
 
-        <div className="carousel-indicators">
-          {currentProjects.map((project, index) => (
-            <button
-              key={index}
-              className={`indicator ${
-                index === currentProject ? "active" : ""
-              }`}
-              onClick={() => goToProject(index)}
-            >
-              {project.thumbnail ? (
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="indicator-image"
-                />
-              ) : project.video ? (
+        <div className="carousel-container">
+          <div className="carousel">
+            <div className="project-card">
+              <div className="project-header">
+                <h2>{currentProjects[currentProject].title}</h2>
+              </div>
+              {currentProjects[currentProject].video ? (
                 <video
-                  src={project.video}
-                  className="indicator-video"
+                  src={currentProjects[currentProject].video}
+                  className="project-video"
+                  autoPlay
+                  loop
                   muted
                   playsInline
+                  controls
+                  controlsList="nodownload"
                 />
               ) : (
                 <img
-                  src={project.image}
-                  alt={project.title}
-                  className="indicator-image"
+                  src={currentProjects[currentProject].image}
+                  alt={currentProjects[currentProject].title}
+                  className="project-image"
                 />
               )}
-              <div className="indicator-overlay">
-                <span className="indicator-text">{project.title}</span>
+              <div className="project-content">
+                <p>{currentProjects[currentProject].description}</p>
+                {activeTab === "personal" && (
+                  <div className="platform-buttons">
+                    {currentProjects[currentProject].webUrl && (
+                      <a
+                        href={currentProjects[currentProject].webUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="platform-btn web-btn"
+                      >
+                        <span className="btn-icon">🌐</span>
+                        Open Web App
+                      </a>
+                    )}
+                    {currentProjects[currentProject].androidUrl && (
+                      <a
+                        href={currentProjects[currentProject].androidUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="platform-btn android-btn"
+                      >
+                        <span className="btn-icon">⚡</span>
+                        Android
+                      </a>
+                    )}
+                    {currentProjects[currentProject].iosUrl && (
+                      <a
+                        href={currentProjects[currentProject].iosUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="platform-btn ios-btn"
+                      >
+                        <span className="btn-icon">🍏</span>
+                        iOS
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
-            </button>
-          ))}
+            </div>
+
+            <div className="carousel-navigation">
+              <button className="carousel-btn prev" onClick={prevProject}>
+                &#8249;
+              </button>
+              <button className="carousel-btn next" onClick={nextProject}>
+                &#8250;
+              </button>
+            </div>
+          </div>
+
+          <div className="carousel-indicators">
+            {currentProjects.map((project, index) => (
+              <button
+                key={index}
+                className={`indicator ${
+                  index === currentProject ? "active" : ""
+                }`}
+                onClick={() => goToProject(index)}
+              >
+                {project.thumbnail ? (
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="indicator-image"
+                  />
+                ) : project.video ? (
+                  <video
+                    src={project.video}
+                    className="indicator-video"
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="indicator-image"
+                  />
+                )}
+                <div className="indicator-overlay">
+                  <span className="indicator-text">{project.title}</span>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
