@@ -39,7 +39,7 @@ function App() {
       webUrl: "https://indigofootball.org/",
       iosUrl: "https://apps.apple.com/us/app/indigo-football/id6740720730",
     },
-    {
+    /*{
       id: 3,
       title: "Collection Paradise",
       image: "/assets/CollectionParadise.png",
@@ -47,7 +47,7 @@ function App() {
         "Inventory Visualisation Application. Visualises database contents and provides query options for creating sublists. " +
         "Provides funcitlaity for scraping adidtional public data for sublists, and generating and exporting graph data.",
       webUrl: "https://collectionparadise.com.au/",
-    },
+    },*/
     {
       id: 4,
       title: "Eventron",
